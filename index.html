@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection with Machine Learning</title>
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Animate.css para animações base -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Menu flutuante -->
+    <nav>
+        <img src="images/logo.png" alt="Logo">
+        <a href="#pagina-inicial">Página Inicial</a>
+        <a href="#detectar-phishing">Detectar Phishing</a>
+        <a href="#quem-somos">Quem somos nós</a>
+        <a href="#referencias">Referências</a>
+    </nav>
+    <div class="titulo-container">
+        <h1 class="titulo-centralizado"> PHISHML </h1>
+        </div>
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <!-- Seção Página Inicial -->
+        <section id="pagina-inicial">
+            <div class="texto">
+                <p> Com a expansão do uso da internet para transações financeiras, comunicação digital e serviços em nuvem, a segurança cibernética tornou-se uma preocupação central. Dentre as ameaças mais comuns, o phishing destaca-se por sua capacidade de enganar usuários ao se passar por fontes confiáveis. Esse ataque tem se tornado cada vez mais sofisticado, dificultando a detecção por métodos tradicionais. Os métodos tradicionais de detecção e prevenção de phishing dependem de técnicas baseadas em black lists (listas negras), assinaturas e até mesmo a própria noção do usuário, que, embora eficazes em algumas situações, falham ao lidar com ataques novos ou previamente desconhecidos (zero-day attacks).</p>
+                <p> Diante da grande dificuldade enfrentada pela inclusão digital e a velocidade com que os golpistas se adaptam às novas tecnologias, a detecção de phishing torna-se uma tarefa árdua, tornando os métodos mencionados por si só insuficientes para combater o golpe. Assim, a principal funcionalidade desta aplicação é identificar possíveis ataques em tempo real, contribuindo para a redução de casos de phishing.</p>
+            </div>
+            <div class="imagem">
+                <img src="images/phishing.gif" alt="Segurança na internet"></a>
+            </div>
+        </section>
+        
+
+        <!-- Seção Detectar Phishing -->
+        <section id="detectar-phishing">
+            <div class="conteudo">
+              <h1>Detectar Phishing</h1>
+              <p>Está em dúvida sobre algum site? Digite a URL abaixo para verificar se é confiável ou não acessar esse website</p>
+              <div class="input-container">
+                <input type="text" id="url-input" placeholder="Digite uma URL para verificar">
+                <button id="check-url">Verificar URL</button>
+              </div>
+              <br>
+              <div id="feedback-message" class="feedback"></div>
+              <div id="phish-details"> <br> <br> <br> O site informado foi identificado como potencialmente malicioso pela nossa aplicação. Se você recebeu esse link de uma fonte desconhecida ou não confiável, não insira nenhuma informação pessoal e feche imediatamente a janela do site.
+                Recomendamos que você também notifique outras pessoas que possam acessar esse link. Para se proteger, fique atento a sinais comuns de sites de phishing, como:
+
+                Endereços de site estranhos ou com erros de digitação;
+
+                Solicitação de dados pessoais ou bancários de forma suspeita;
+
+                Design semelhante ao de sites confiáveis, mas com comportamentos incomuns;
+
+                Ausência de conexão segura (cadeado ao lado do endereço – HTTPS) </div>
+              <div id="legit-details">O site informado não foi identificado como phishing e pode ser acessado com segurança. No entanto, recomendamos cautela: evite inserir informações pessoais em sites desconhecidos e sempre verifique a confiabilidade da fonte antes de prosseguir.</div>
+            </div>
+          </section>
+          <section id="quem-somos">
+            <h1> Quem somos nós </h1>
+            <p> Somos um grupo de estudantes apaixonados por tecnologia do sexto semestre do curso de Segurança da Informação da Faculdade de Tecnologia de Ourinhos (FATEC) </p>
+            <div class="team-container">
+                <!-- Pessoa 1 -->
+                <div class="team-box">
+                    <div class="team-card">
+                        <!-- Frente da carta -->
+                        <div class="front">
+                            <img src="images\felipe.png" alt="Felipe Porceli Volpe" class="photo"> <!-- Foto -->
+                            <h2>Felipe Porceli Volpe</h2>
+                        </div>
+                        <!-- Parte de trás da carta -->
+                        <div class="back">
+                            <h3>About Felipe</h3>
+                            <p> Felipe é Auxiliar de Back Office no Sebrae São Paulo. Possui certificação AWS Cloud Practictioner e é apaixonado por infraestrutura da nuvem </p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/felipe-porceli-189390208/" target="_blank">
+                                    <img src="images\linkedin-icon.png" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.instagram.com/fporceli/" target="_blank">
+                                    <img src="images\instagram-icon.png" alt="Instagram">
+                                </a>
+                                <a href="https://github.com" target="_blank">
+                                    <img src="images\github-icon.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Pessoa 2 -->
+                <div class="team-box">
+                    <div class="team-card">
+                        <!-- Frente da carta -->
+                        <div class="front">
+                            <img src="images\gabriel.png" alt="Ana Costa" class="photo"> <!-- Foto -->
+                            <h2>Gabriel Pedrozo de Oliveira</h2>
+                        </div>
+                        <!-- Parte de trás da carta -->
+                        <div class="back">
+                            <h3>About Gabriel Pedrozo</h3>
+                            <p>Gabriel atualmente trabalha como montador de móveis. É aspirante a ataques de ofensivo utilizando técnicas de OSINT</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/gabrepedrozo/" target="_blank">
+                                    <img src="images\linkedin-icon.png" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.instagram.com/1gabre/" target="_blank">
+                                    <img src="images\instagram-icon.png" alt="Instagram">
+                                </a>
+                                <a href="https://github.com" target="_blank">
+                                    <img src="images\github-icon.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Pessoa 3 -->
+                <div class="team-box">
+                    <div class="team-card">
+                        <!-- Frente da carta -->
+                        <div class="front">
+                            <img src="images\gustavo.png" alt="Lucas Pereira" class="photo"> <!-- Foto -->
+                            <h2>Gustavo Rossini Barbosa de Lima</h2>
+                        </div>
+                        <!-- Parte de trás da carta -->
+                        <div class="back">
+                            <h3>About Gustavo Rossini</h3>
+                            <p>Gustavo tem experiência em desenvolvimento de software, focando em otimização e escalabilidade de sistemas.</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/gustavo-rossini-1b1213258/" target="_blank">
+                                    <img src="images\linkedin-icon.png" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <img src="images\instagram-icon.png" alt="Instagram">
+                                </a>
+                                <a href="https://github.com" target="_blank">
+                                    <img src="images\github-icon.png" alt="GitHub">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </section>        
+
+        <section id="referencias">
+            <h1>Referências</h1>
+            <p>Abaixo estarão listadas todas as referências utilizadas no desenvolvimento da nossa pesquisa científica:</p>
+<ul>
+  <li>Abdul Samad, S. R., Balasubaramanian, S., Al-Kaabi, A. S., Sharma, B., Chowdhury, S., Mehbodniya, A., Webber, J. L., and Bostani, A. (2023). Analysis of the performance impact of fine-tuned machine learning model for phishing url detection. <i>Electronics</i>, 12(7)</li>
+  <br>
+  <li>APWG (2024). Phishing activity trends report – 4th quarter 2024. <a href="https://docs.apwg.org/reports/apwg_trends_report_q4_2024.pdf" target="_blank">https://docs.apwg.org/reports/apwg_trends_report_q4_2024.pdf</a>. Accessed: 2025-05-29.</li>
+  <br>
+  <li>Asif, A. U. Z., Shirazi, H., and Ray, I. (2023). Machine learning-based phishing detection using url features: A comprehensive review. In <i>International Symposium on Stabilizing, Safety, and Security of Distributed Systems</i>, pages 481–497. Springer.</li>
+  <br>
+  <li>CERT.br (2025). Páginas falsas utilizadas em tentativas de phishing. <a href="https://stats.cert.br/phishing/" target="_blank">https://stats.cert.br/phishing/</a>.</li>
+  <br>
+  <li>Cisco (2023). Newsroom Cisco. <a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m02/security-history-the-evolution-of-phishing.html" target="_blank">https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m02/security-history-the-evolution-of-phishing.html</a></li>
+  <br>
+  <li>Holdsworth, J. and Scapicchio, M. (2024). O que é deep learning? <a href="https://www.ibm.com/br-pt/topics/deep-learning" target="_blank">https://www.ibm.com/br-pt/topics/deep-learning</a>.</li>
+  <br>
+  <li>Karim, A., Shahroz, M., Mustofa, K., Belhaouari, S. B., and Joga, S. R. K. (2023). Phishing detection system through hybrid machine learning based on url. <i>IEEE Access</i>, 11:36805–36822.</li>
+  <br>
+  <li>Kumari, M. S., Priya, C. K., Bhavya, G., Neha, H., Awasthi, M., and Tripathi, S. (2023). Viable detection of url phishing using machine learning approach. In <i>E3S Web of Conferences</i>, volume 430, page 01037. EDP Sciences.</li>
+  <br>
+  <li>Murphy, K. P. (2012). <i>Machine Learning: A Probabilistic Perspective</i>. Plageder.</li>
+  <br>
+  <li>Neves, R. A. C. (2022). Vitimação por phishing: um estudo empírico.</li>
+  <br>
+  <li>Pais, A. R. et al. (2023). Phishing Email and URL Detection using Machine Learning and Deep Learning. PhD thesis, National Institute Of Technology Karnataka Surathkal.</li>
+  <br>
+  <li>Rani, L. M., Foozy, C. F. M., and Mustafa, S. N. B. (2023). Feature selection to enhance phishing website detection based on url using machine learning techniques. <i>Journal of Soft Computing and Data Mining</i>, 4(1):30–41.</li>
+  <br>
+  <li>Rebello, G. and Araujo, E. (2016). Phishing - GTA UFRJ.</li>
+  <br>
+  <li>Sudhakar, K., Pujitha, G. L., Venu, K., JayaSri, C., Sadhwika, A., and Jasmine, K. (2024). Developing a phishing detection system utilizing a hybrid machine learning approach focused on URL analysis.</li>
+</ul>
+
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <div id="loading-overlay">
+  <img src="images\loading.gif" alt="Carregando...">
+    </div>
+</body>
+</html>

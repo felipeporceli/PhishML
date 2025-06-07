@@ -1,0 +1,484 @@
+/* Resetando margens e espaçamento do body */
+/* Adicionando rolagem suave ao documento */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    
+}
+
+/* Estilo para o título centralizado no meio da tela */
+.titulo-container {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.titulo-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/fhishing.gif') no-repeat center center/cover;
+  filter: brightness(0.5);
+  z-index: 0;
+}
+
+.titulo-centralizado {
+  position: relative;
+  z-index: 2; /* garante que fique acima da imagem */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #fffbf9;
+}
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('fonts/FontsFree-Net-Armin-Grotesk2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Padronização de parágrafos */
+p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Estilo do menu flutuante */
+nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: white;
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #640D5F;
+    transform: scale(1.09);
+    box-shadow: 0 2px 5px rgba(114, 114, 114, 0.2);
+}
+
+.content {
+    margin-top: 60px;
+    padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 50px 0;
+    margin: 50px 0;
+    border-bottom: 2px solid #f0f0f0;
+    width: 100%;
+    text-align: justify;
+}
+
+/* Ajustes nos títulos das seções */
+section h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+/* Justificando o texto em toda a página */
+.content, section {
+    text-align: justify; /* Alinha o texto de forma justificada */
+}
+
+/* Estilo para a seção "Página Inicial" com duas colunas */
+/* Página Inicial - Layout Moderno */
+#pagina-inicial {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 40px; /* Espaço maior entre texto e imagem */
+    padding: 1px 0; /* Maior espaçamento superior/inferior */
+}
+
+/* Estilização do texto */
+#pagina-inicial .texto {
+    width: 50%;
+    text-align: justify;
+    max-width: px;
+}
+
+/* Aumentando o tamanho do título */
+#pagina-inicial .texto h1 {
+    font-size: 3rem; /* Tamanho grande para destaque */
+    align-items: center;
+    font-weight: bold;
+    color: #000; /* Mantendo preto para contraste */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+}
+
+/* Aumentando o tamanho do texto padrão */
+#pagina-inicial .texto p {
+    font-size: 1.5rem; /* Maior que o padrão para melhor leitura */
+    line-height: 1.8; /* Espaçamento entre linhas para mais fluidez */
+    color: #333; /* Cor escura, mas não muito pesada */
+}
+
+/* Estilização da imagem */
+#pagina-inicial .imagem {
+    width: 50%;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+}
+
+/* Ajustes na imagem */
+#pagina-inicial .imagem img {
+    max-width: 100%; /* Mantém um bom tamanho dentro da seção */
+    height: 800px;
+    border-radius: 20px; /* Bordas arredondadas modernas */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease-in-out; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse na imagem */
+#pagina-inicial .imagem img:hover {
+    transform: scale(1.01); /* Dá um pequeno zoom ao passar o mouse */
+}
+
+/* Estilos para a seção "Detectar Phishing" */
+#detectar-phishing {
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    width: 100.1vw;
+    min-height: 300px;
+    padding: 50px 0;
+    text-align: left;
+    position: relative;
+    background-color: #FFB200;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    transition: max-height 20s ease, background-color 1s ease;
+}
+
+/* Conteúdo dentro da seção "Detectar Phishing" */
+#detectar-phishing .conteudo {
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes no título da seção */
+#detectar-phishing h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Ajustes no texto da seção */
+#detectar-phishing p {
+    font-size: 1.5rem; /* Aumenta o tamanho do texto */
+    line-height: 1.8;
+    color: #555; /* Cor mais suave */
+}
+
+/* Estilos para o campo de input e botão */
+#detectar-phishing .input-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+#detectar-phishing input {
+    width: 70%;  /* Aumenta a largura do input */
+    padding: 15px;  /* Aumenta o padding para ficar maior */
+    font-size: 1.5rem;  /* Aumenta o tamanho da fonte */
+    border: 2px solid #ccc;
+    border-radius: 5px;  /* Bordas arredondadas */
+    outline: none;
+}
+
+#detectar-phishing button {
+    padding: 15px 30px;  /* Aumenta o tamanho do botão */
+    background-color: #466028;  /* Cor verde para o botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;  /* Aumenta o tamanho da fonte do botão */
+}
+
+#detectar-phishing button:hover {
+    background-color: #1f2b12;  /* Efeito ao passar o mouse */
+}
+
+#detectar-phishing.expanded,
+#detectar-phishing.expanded-phish,
+#detectar-phishing.expanded-legit,
+#detectar-phishing.expanded-error {
+    min-height: auto;
+    max-height: none;
+    transition: background-color 1s ease;
+}
+
+#detectar-phishing.shake { animation: shake 0.5s ease-in-out; }
+#detectar-phishing.green-bg { background-color: #4CAF50 !important; }
+#detectar-phishing.red-bg   { background-color: #E53935 !important; }
+
+#phish-details,
+#legit-details {
+  display: none;
+  margin-top: 20px;
+  text-align: left;
+  line-height: 1.6;
+  color: #000;
+  font-size: 1.5rem;
+}
+#phish-details span,
+#legit-details span { opacity: 0; }
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-10px); }
+  50%      { transform: translateX(10px); }
+  75%      { transform: translateX(-10px); }
+}
+
+/* Estilo para a mensagem de feedback */
+#feedback-message {
+    display: block;
+    color: #000 !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  #detectar-phishing.expanded-error {
+    max-height: 400px;
+  }
+  
+
+
+/* Ajustando o tamanho dos cards */
+.team-box {
+    position: relative;
+    width: 300px; /* Diminuindo a largura dos cards */
+    height: 450px; /* Diminuindo a altura dos cards */
+    margin: 40px; /* Aumentando o espaço entre os cards */
+    perspective: 1000px; /* Adicionando perspectiva */
+}
+
+/* A carta que vai virar */
+.team-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d; /* Garante a preservação das 3 dimensões */
+    transition: transform 0.6s;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Bordas arredondadas */
+    background: transparent; /* Removendo o gradiente da borda dourada */
+}
+
+
+/* Efeito de virar a carta */
+.team-box:hover .team-card {
+    transform: rotateY(180deg); /* A carta vira no eixo Y */
+}
+
+/* Parte da frente da carta (a face frontal) */
+.team-card .front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Esconde a parte de trás ao virar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha tudo no topo */
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: #800000; /* Novo fundo para a parte da frente da carta */
+    padding: 20px; /* Padding para dar um espaçamento entre a borda e o conteúdo */
+    text-align: left; /* Alinha o texto à esquerda */
+    overflow: hidden; /* Impede a foto de sair do limite da carta */
+}
+
+/* Ajustando a foto para cobrir quase toda a área da carta */
+.team-card .front img {
+    width: 100%;
+    height: 60%; /* A foto ocupará 60% da altura da carta */
+    object-fit: cover; /* A imagem vai cobrir completamente o espaço */
+    margin-bottom: 10px; /* Espaço entre a foto e o nome */
+}
+
+/* Ajuste no nome e profissão */
+.team-card .front h2 {
+    font-size: 2rem; /* Aumentando o tamanho da fonte do título */
+    font-weight: bold;
+    color: #fff; /* Cor branca para contrastar com o fundo escuro */
+    margin-top: 10px; /* Adicionando espaçamento superior */
+}
+
+
+/* Parte de trás da carta (a face traseira) */
+.team-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Esconde a frente ao virar */
+    transform: rotateY(180deg); /* A parte de trás vira no eixo Y */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo do título e texto da parte de trás */
+.team-card .back h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-card .back p {
+    font-size: 1.2rem; /* Aumentando o tamanho da fonte */
+    color: #333; /* Cor mais suave para o parágrafo */
+    margin-bottom: 10px;
+    line-height: 1.8; /* Aumentando o espaçamento entre as linhas para facilitar a leitura */
+}
+
+/* Estilo para os ícones das redes sociais */
+.team-card .back .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.team-card .back .social-links img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Estilo do container de membros */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre as cartas */
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+li {
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo opaco */
+  display: none; /* começa escondido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loading-overlay img {
+  width: 200px;
+  height: auto;
+}
+
+#referencias {
+    background-color: #474B28;
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    transition: transform 0.3s ease; /* transição suave */
+}
+
+#referencias a {
+  color: white;        /* define a cor branca */
+  text-decoration: underline; /* opcional: remove o sublinhado */
+}
+
+#referencias:hover {
+  transform: scale(1.01); /* aumenta 5% no hover */
+  cursor: default; /* mantém o cursor padrão */
+}
+
+
+/* Estilo para todos os textos internos, incluindo títulos */
+#referencias h1,
+#referencias h2,
+#referencias h3,
+#referencias h4,
+#referencias h5,
+#referencias h6,
+#referencias p,
+#referencias li {
+    color: white;
+}
+
+
+

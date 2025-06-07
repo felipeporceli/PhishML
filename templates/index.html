@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detecção de Phishing</title>
+</head>
+<body>
+    <h1>Verificador de URL</h1>
+    <form method="post">
+        <input type="text" name="url" placeholder="Digite a URL aqui" required style="width: 300px;">
+        <button type="submit">Prever</button>
+    </form>
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+</body>
+</html>
