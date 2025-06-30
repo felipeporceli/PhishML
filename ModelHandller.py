@@ -34,6 +34,7 @@ def plot_confusion_matrix(test_Y, predict_y):
     plt.xlabel('Predicted Class')
     plt.ylabel('Original Class')
     plt.title("Recall matrix")
+
 def Model(clfs,train_X,train_Y,test_X,test_Y):
     dic = thisdict = {
         "Model": [],
@@ -84,11 +85,9 @@ def is_possible_typosquatting(url, legit_domains):
     domain = f"{ext.domain.lower()}.{ext.suffix.lower()}"
     path = urlparse(url).path.lower()
 
-    # Quebrar subdomínio em partes
     sub_tokens = re.split(r'[.\-_]', subdomain) if subdomain else []
     path_tokens = re.findall(r'\w+', path) if path else []
 
-    # Para debug
     print(f"[DEBUG] Domínio extraído: {domain}")
     print(f"[DEBUG] Subdomínio extraído: {sub_tokens}")
     print(f"[DEBUG] Caminho tokens: {path_tokens}")
@@ -100,17 +99,14 @@ def is_possible_typosquatting(url, legit_domains):
 
         print(f"[DEBUG] Verificando marca '{brand}' contra URL")
 
-        # Se domínio oficial, ignora
         if domain == legit_domain:
             print("[DEBUG] Domínio legítimo confirmado, ignorando")
             continue
 
-        # Se marca estiver no subdomínio (qualquer parte)
         if brand in sub_tokens:
             print(f"[DEBUG] Marca '{brand}' detectada no subdomínio")
             return True, legit
 
-        # Se marca estiver no caminho
         if brand in path_tokens:
             print(f"[DEBUG] Marca '{brand}' detectada no caminho")
             return True, legit
@@ -131,12 +127,12 @@ def check_webrisk_google(url, api_key="AIzaSyA12yGY4e9N-GSbuTcDPsrZ_8oqMPLies0")
         data = response.json()
 
         if "threat" in data:
-            return -1  # URL maliciosa detectada
+            return -1 
         else:
-            return 1  # URL segura
+            return 1 
     except requests.RequestException as e:
         print(f"[WebRisk] Erro ao consultar API: {e}")
-        return 0  # Em caso de erro, assume como segura (ou você pode optar por 1)
+        return 0 
     
 def MakeInfrence(predictors, url):
     legit_domains = [
@@ -146,27 +142,27 @@ def MakeInfrence(predictors, url):
         "mercadopago.com.br", "pagbank.com.br", "willbank.com.br", "bancopan.com.br", "netflix.com", ""
     ]
 
-    results = []  # Armazena os resultados de cada verificação
+    results = [] 
 
     # 1. Verificação de typosquatting
     typo, legit = is_possible_typosquatting(url, legit_domains)
     if typo:
-        print(f"🚨 Phishing detectado: tentando se passar por {legit}")
+        print(f" Phishing detectado: tentando se passar por {legit}")
         results.append(-1)
     else:
-        print("✅ Typosquatting: URL parece legítima")
+        print(" Typosquatting: URL parece legítima")
         results.append(1)
 
     # 2. Verificação via Google Web Risk API
     api_google = check_webrisk_google(url)
     if api_google == -1:
-        print("🚨 Google Web Risk identificou URL maliciosa.")
+        print("Google Web Risk identificou URL maliciosa.")
         results.append(-1)
     elif api_google == 1:
-        print("✅ Google Web Risk indicou URL segura.")
+        print("Google Web Risk indicou URL segura.")
         results.append(1)
     else:
-        print("⚠️ Google Web Risk não conseguiu determinar o status.")
+        print("Google Web Risk não conseguiu determinar o status.")
         results.append(0)
 
     # 3. Verificação via modelo de machine learning
@@ -178,28 +174,28 @@ def MakeInfrence(predictors, url):
             'AgeofDomain', 'DNSRecording', 'WebsiteTraffic', 'PageRank', 'GoogleIndex', 'StatsReport'
         ]
         if set(features.keys()) != set(expected_columns):
-            print("❌ Erro: features ausentes ou incorretas")
+            print("Erro: features ausentes ou incorretas")
             results.append(0)
         else:
             test = pd.DataFrame(features)
             prediction = predictors[5].predict(test)[0]
             prediction = int(prediction)
-            print(f"🔍 Modelo de ML previu: {'Legítimo' if prediction == 1 else 'Phishing'}")
+            print(f"Modelo de ML previu: {'Legítimo' if prediction == 1 else 'Phishing'}")
             results.append(prediction)
     except Exception as e:
-        print(f"❌ Erro ao processar modelo de ML: {e}")
+        print(f"Erro ao processar modelo de ML: {e}")
         results.append(0)
 
     # Voto majoritário pessimista: se qualquer verificação indicou -1, retorna -1
     print("\n======= RESULTADO FINAL =======")
     print(f"Votos das verificações: {results}")
     if -1 in results:
-        print("🚨 Resultado final: PHISHING DETECTADO")
+        print("Resultado final: PHISHING DETECTADO")
         return -1
     elif 0 in results:
-        print("🚨 Resultado final: PHISHING DETECTADO")
+        print("Resultado final: PHISHING DETECTADO")
         return -1
     else:
-        print("✅ Resultado final: SITE LEGÍTIMO")
+        print("Resultado final: SITE LEGÍTIMO")
         return 1
 

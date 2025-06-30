@@ -14,10 +14,8 @@ import seaborn as sns
 import os
 from ModelHandller import Model, MakeInfrence
 import tldextract
-
-
 app = Flask(__name__)
-CORS(app)  # Permite CORS para todas as rotas e origens
+CORS(app) 
 
 # Treinamento do modelo ao iniciar o servidor
 data = pd.read_csv('phishing.csv')
